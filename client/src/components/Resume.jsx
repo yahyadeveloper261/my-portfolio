@@ -1,5 +1,7 @@
 import React from "react";
 import resumePDF from "../assets/images/resume.pdf";
+import profile from "../assets/images/yahya.png";
+
 import {
   FaGithub,
   FaLinkedin,
@@ -25,29 +27,7 @@ export default function Resume() {
     "Git & GitHub",
   ];
 
-  const projects = [
-    {
-      name: "Doctor Appointment SaaS",
-      desc: "A full-stack appointment booking platform with patient and doctor dashboards, authentication and appointment management.",
-      tech: "React, Node.js, Express, MongoDB",
-    },
-    {
-      name: "Mini Product App",
-      desc: "A product management application with search, sorting, filtering and CRUD functionality.",
-      tech: "React, Tailwind CSS, Node.js",
-    },
-    {
-      name: "Weather App",
-      desc: "A responsive weather application displaying weather information using an API.",
-      tech: "React, JavaScript, API",
-    },
-    {
-      name: "Notes App",
-      desc: "A simple notes application for creating, editing and managing notes.",
-      tech: "React, JavaScript, CSS",
-    },
-  ];
-
+ 
   return (
     <div className="min-h-screen bg-[#080d19] text-white">
       {/* Hero Section */}
@@ -117,25 +97,34 @@ export default function Resume() {
             </div>
           </div>
 
-          {/* Developer Image */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-cyan-500 blur-[100px] opacity-20"></div>
+         {/* Developer Image */}
+<div className="relative w-full max-w-md mx-auto">
 
-            <img
-              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000"
-              alt="Developer working on laptop"
-              className="relative w-full h-[320px] sm:h-[430px] object-cover rounded-3xl border border-cyan-500/30 shadow-2xl"
-            />
+  {/* Glow Effect */}
+  <div className="absolute inset-0 bg-cyan-500 blur-[100px] opacity-20"></div>
 
-            <div className="absolute bottom-5 left-5 right-5 bg-black/70 backdrop-blur-md p-4 rounded-xl">
-              <p className="text-cyan-400 font-semibold">
-                Full Stack Developer
-              </p>
-              <p className="text-gray-300 text-sm">
-                Building modern web experiences
-              </p>
-            </div>
-          </div>
+  {/* Image Container */}
+  <div className="relative w-full h-[350px] sm:h-[430px] bg-[#111c2e] rounded-3xl border border-cyan-500/30 shadow-2xl overflow-hidden flex items-center justify-center">
+
+    <img
+      src={profile}
+      alt="Developer working on laptop"
+      className="w-full h-full object-contain p-3"
+    />
+
+    {/* Bottom Text */}
+    <div className="absolute bottom-4 left-4 right-4 bg-black/75 backdrop-blur-md p-4 rounded-xl">
+      <p className="text-cyan-400 font-semibold">
+        Full Stack Developer
+      </p>
+
+      <p className="text-gray-300 text-sm">
+        Building modern web experiences
+      </p>
+    </div>
+
+  </div>
+</div>
         </div>
       </section>
 
@@ -213,31 +202,6 @@ export default function Resume() {
           </div>
         </div>
       </section>
-
-      {/* Projects */}
-      <section id="projects" className="max-w-7xl mx-auto px-5 md:px-10 py-16">
-        <h2 className="text-3xl font-bold mb-10">
-          Featured <span className="text-cyan-400">Projects</span>
-        </h2>
-
-        <div className="grid sm:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="bg-[#111c2e] border border-gray-800 hover:border-cyan-400 p-7 rounded-2xl transition hover:-translate-y-1"
-            >
-              <FaLaptopCode className="text-cyan-400 text-3xl mb-5" />
-
-              <h3 className="text-xl font-bold mb-3">{project.name}</h3>
-
-              <p className="text-gray-400 leading-7">{project.desc}</p>
-
-              <p className="text-cyan-400 text-sm mt-5">{project.tech}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Contact */}
       <section className="bg-[#101827] py-16 px-5">
         <div className="max-w-7xl mx-auto text-center">
