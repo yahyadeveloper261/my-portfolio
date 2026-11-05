@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+@theme {
+  /* Navbar Animations */
+  --animate-entrance-left: entranceLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  --animate-entrance-right: entranceRight 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+
+  @keyframes entranceLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-70px);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes entranceRight {
+    from {
+      opacity: 0;
+      transform: translateX(70px);
+      filter: blur(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+  }
+
+  /* Hero Animations */
+  --animate-slide-left: slideLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-slide-right: slideRight 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fadeIn 0.8s ease-out both;
+
+  @keyframes slideLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-60px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes slideRight {
+    from {
+      opacity: 0;
+      transform: translateX(60px);
+      filter: blur(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Animated Developer Name */
+.hero-name {
+  background-size: 200% auto;
+  animation: nameShine 4s linear infinite;
+}
+
+@keyframes nameShine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+/* Profile Floating */
+.hero-profile {
+  animation: profileFloat 4s ease-in-out infinite;
+}
+
+@keyframes profileFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* Rotating Rings */
+.hero-spin {
+  animation: heroSpin 25s linear infinite;
+}
+
+.hero-spin-reverse {
+  animation: heroSpin 35s linear infinite reverse;
+}
+
+@keyframes heroSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Floating Technology Cards */
+.hero-float {
+  animation: heroFloat 3.5s ease-in-out infinite;
+}
+
+.hero-card-react {
+  animation-delay: 0s;
+}
+
+.hero-card-node {
+  animation-delay: 0.7s;
+}
+
+.hero-card-mongo {
+  animation-delay: 1.3s;
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-13px);
+  }
+}
+
+/* Live Moving Name Animation */
+.hero-name {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #06b6d4,
+    #a855f7,
+    #ec4899,
+    #f97316,
+    #2563eb
+  );
+
+  background-size: 300% 300%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    nameMove 3s ease-in-out infinite alternate,
+    nameColor 5s linear infinite;
+}
+
+@keyframes nameMove {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes nameColor {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+/* Live Animated Buttons */
+.hero-btn {
+  background-size: 200% auto;
+  animation: buttonGradient 4s linear infinite,
+             buttonFloat 3s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+@keyframes buttonGradient {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes buttonFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.hero-btn:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 12px 30px rgba(37, 99, 235, 0.35);
+}
+
+/* Contact Button Live Border */
+.contact-btn {
+  background:
+    linear-gradient(#030712, #030712) padding-box,
+    linear-gradient(90deg, #2563eb, #06b6d4, #a855f7, #2563eb) border-box;
+  border: 2px solid transparent;
+  background-size: auto, 300% 300%;
+  animation: contactGradient 4s linear infinite;
+}
+
+.contact-btn:hover {
+  color: #06b6d4;
+  transform: translateY(-6px);
+}
+
+@keyframes contactGradient {
+  0% {
+    background-position: 0 0, 0% 50%;
+  }
+  100% {
+    background-position: 0 0, 100% 50%;
+  }
+}
+
+/* Follow Me Live Text */
+.follow-text {
+  display: inline-block;
+  background: linear-gradient(
+    90deg,
+    #2563eb,
+    #06b6d4,
+    #a855f7,
+    #ec4899,
+    #2563eb
+  );
+  background-size: 300% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: followColor 4s linear infinite;
+}
+
+@keyframes followColor {
+  to {
+    background-position: 300% center;
+  }
+}
