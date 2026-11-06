@@ -3,6 +3,8 @@ import movie from "../assets/images/movie.png";
 import weather from "../assets/images/weather.png";
 import github from "../assets/images/github.png";
 import note from "../assets/images/note.jpeg"
+import todo from "../assets/images/todo.png"
+
 const projects = [
 {
   number: "01",
@@ -64,6 +66,18 @@ const projects = [
   github: "https://github.com/yahyadeveloper261/Note_App",
   accent: "from-purple-500 to-pink-400",
 },
+{
+  number: "06",
+  title: "Todo App",
+  category: "Frontend Application",
+  description:
+    "A task management application that allows users to add, edit, delete, and mark tasks as completed. Tasks are saved in the browser's localStorage, so data remains available even after refreshing the page.",
+  technologies: ["React", "JavaScript", "Tailwind CSS", "LocalStorage"],
+  image: todo,
+  live: "https://note-app-umber-seven.vercel.app/",
+  github: "https://github.com/yahyadeveloper261/Note_App",
+  accent: "from-green-500 to-emerald-400",
+}
 ];
 
 export default function Projects({ dark }) {
