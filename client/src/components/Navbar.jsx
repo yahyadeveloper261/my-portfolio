@@ -1,8 +1,19 @@
-import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { useState ,useEffect} from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 export default function Navbar({ dark, setDark }) {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const location = useLocation();
+
+useEffect(() => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+
+  setMenuOpen(false);
+}, [location.pathname]);
 
   const links = [
     { name: "Home", path: "/" },

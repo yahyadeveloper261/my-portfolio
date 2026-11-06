@@ -1,11 +1,8 @@
-import React from "react";
 import doctor from "../assets/images/doctor.png";
 import movie from "../assets/images/movie.png";
 import weather from "../assets/images/weather.png";
 import github from "../assets/images/github.png";
-
-
-
+import note from "../assets/images/note.jpeg"
 const projects = [
 {
   number: "01",
@@ -39,8 +36,8 @@ const projects = [
       "An interactive movie discovery application with movie details, search functionality, pagination, and favorites.",
     technologies: ["React", "API Integration", "Tailwind CSS"],
     image:movie,
-    live: "",
-    github: "",
+    live: "https://movie-app-beryl-nu.vercel.app/",
+    github: "https://github.com/yahyadeveloper261/movie-app",
     accent: "from-purple-500 to-indigo-500",
   },
   {
@@ -55,6 +52,18 @@ const projects = [
     github: "https://github.com/yahyadeveloper261/weather-app",
     accent: "from-orange-400 to-yellow-500",
   },
+  {
+  number: "05",
+  title: "Note Taking App",
+  category: "Frontend Application",
+  description:
+    "A simple note-taking application that allows users to create, edit, delete, and manage notes. Notes are saved in the browser's localStorage, so data remains available after refreshing the page.",
+  technologies: ["React", "JavaScript", "Tailwind CSS", "LocalStorage"],
+  image: note,
+  live: "https://note-app-umber-seven.vercel.app/",
+  github: "https://github.com/yahyadeveloper261/Note_App",
+  accent: "from-purple-500 to-pink-400",
+},
 ];
 
 export default function Projects({ dark }) {
